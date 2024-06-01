@@ -1,15 +1,18 @@
-<H1>The Office 365 Email Security Checklist scripts:</H1>
+<H1>The Office 365 Email Security Checklist scripts</H1>
 
-<H2>You can either run the entire recommended baseline (Baseline-ExchangeOnline), or run the scripts individually:</H2>
+<H2>Description of the scripts:</H2>
 
-<p>• Baseline-ATP-P1.ps1: Configures Office 365 Advanced Threat Protection (plan 1)
-<p>• Baseline-ExchangeOnline.ps1: Configures Exchange Online tenant with all of the baseline settings and policies, except ATP
-<p>• Configure-Auditing.ps1: Sets audit log age limit and mailbox actions auditing
-<p>• Configure-AntiMalwareSpam.ps1: Configures the antispam and antimalware baseline policies; use .\Configure-AntiMalwareSpam.ps1 -Domain "yourdomainhere.com" -Alert "youralertaddresshere@yourdomainhere.com"
-<p>• Block-BasicAuth.ps1: Creates an authentication policy to block basic auth (see the comments in the script for making exceptions)
-<p>• Baseline-MobileDevicePolicy.ps1: Creates a default mobile device policy requring 4 digit PIN and device encryption (not needed if using MDM or MAM via Intune)
-<p>• Setup-DKIM.ps1: This script helps with configuring DKIM; use: .\Setup-DKIM.ps1 -Domain "yourdomainhere.com"
-<p>• Disable-Forwarding.ps1: This script will disable auto-forwarding and also output csv of existing forwarders to C:\temp
+<p>• <b>Install-EXOStandardProtection.ps1</b>: This script will configure your default EOP and MDO settings to match the Standard protection template
+<p>• <b>Advanced-TenantConfig.ps1</b>: For customization of Exchange Online including many of the settings featured in other scripts:
+<p>• <b>Block-UnmanagedDownload.ps1 </b>: This script configures the "Read-Only" Conditonal Access policy (additional config required)
+<p>• <b>Block-ConsumerStorageOWA.ps1 </b>: This script disables 3rd party consumer storage locations in OWA
+<p>• <b>Configure-Auditing.ps1 </b>: This script enables and helps you configure audit log age, etc.
+<p>• <b>Disable-Forwarding.ps1</b>: This script will disable auto-forwarding and also output csv of existing forwarders to C:\temp
+<p>• <b>Disable-SharedMbxSignOn.ps1 </b>: This script disables sign-in for shared mailboxes
+<p>• <b>Set-DeletedItemsRetention.ps1 </b>: This script sets the deleted items retention value to max = 30 days (instead of default = 14)
+<p>• <b>Setup-DKIM.ps1 </b>: This script helps with configuring DKIM; use: .\Setup-DKIM.ps1 -Domain "yourdomainhere.com"
 
-<p>Be sure to read the comments and variables at the beginning of each script. You are responsible for your own implementation, use at your own risk.
+
+<p>Be sure to read the comments and review each script. You are responsible for your own implementation, use at your own risk.
 <p>These scripts follow the guide published at: https://www.itpromentor.com/email-security-checklist/
+  <p>
